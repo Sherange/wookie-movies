@@ -7,11 +7,16 @@
  */
 
 import React from 'react';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 import DetailScreen from './src/screens/DetailScreen';
 import HomeScreen from './src/screens/HomeScreen';
 
 const App = () => {
-  return <DetailScreen />;
+  return (
+    <SafeAreaProvider>
+      <DetailScreen />
+    </SafeAreaProvider>
+  );
 };
 
 export default App;
