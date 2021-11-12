@@ -8,7 +8,7 @@ import {
   Dimensions,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import {primaryTextColor, secondryColor, secondryTextColor} from '../../constants/theme';
+import {primaryColor, primaryTextColor, secondryTextColor} from '../../constants/theme';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -28,10 +28,12 @@ const Header = props => {
           source={{uri: thumbnailImage}}></Image>
 
         <View style={styles.ratingContainer}>
-          <Text style={styles.titleStyle}>{title}</Text>
+          <Text style={styles.titleStyle} numberOfLines={1}>
+            {title}
+          </Text>
           <Text style={styles.ratingTextStyle}>
             {rating}
-            <Text style={styles.ratingSubTextStyle}> /10 IMDb RATING</Text>
+            <Text style={styles.ratingSubTextStyle}> /10 IMDb rating</Text>
           </Text>
         </View>
       </View>
@@ -47,6 +49,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginTop: windowHeight * -0.15,
+    marginHorizontal: 20,
   },
   titleStyle: {
     color: primaryTextColor,
@@ -63,7 +66,6 @@ const styles = StyleSheet.create({
   thumbnailImage: {
     height: 200,
     width: 150,
-    marginLeft: 20,
   },
   ratingContainer: {
     flex: 1,
@@ -71,7 +73,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
   },
   ratingTextStyle: {
-    color: secondryTextColor,
+    color: primaryColor,
     fontWeight: '900',
     marginLeft: 10,
     fontSize: 20,

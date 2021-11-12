@@ -1,7 +1,8 @@
 import React from 'react';
-import {View, Text, StyleSheet, StatusBar} from 'react-native';
+import {View, StyleSheet, StatusBar} from 'react-native';
 import {backgroundColor} from '../../constants/theme';
 import Header from './Header';
+import MovieInfo from './MovieInfo';
 
 const data = {
   backdrop:
@@ -31,6 +32,13 @@ const DetailScreen = () => {
         thumbnailImage={data.poster}
         title={data.title}
         rating={data.imdb_rating}
+      />
+      <MovieInfo
+        cast={data.cast}
+        overview={data.overview}
+        year={data.released_on}
+        duration={data.length}
+        director={data.director}
       />
     </View>
   );
