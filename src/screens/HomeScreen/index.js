@@ -1,6 +1,9 @@
 import React from 'react';
 import {SafeAreaView, View, StatusBar, Text, StyleSheet} from 'react-native';
 import {backgroundColor, primaryTextColor} from '../../constants/theme';
+import {movies} from '../../constants/mockData';
+
+const data = movies;
 
 const HomeScreen = () => {
   return (
