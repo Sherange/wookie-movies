@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieCard snapshot 1`] = `
+<View
+  style={
+    Object {
+      "marginRight": 10,
+      "marginVertical": 8,
+      "width": 150,
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "https://wookie.codesubmit.io/static/posters/d6822b7b-48bb-4b78-ad5e-9ba04c517ec8.jpg",
+      }
+    }
+    style={
+      Object {
+        "height": 250,
+        "width": 150,
+      }
+    }
+  />
+  <Text
+    numberOfLines={1}
+    style={
+      Object {
+        "color": "#FFFFFF",
+        "fontSize": 16,
+        "fontWeight": "600",
+        "marginVertical": 4,
+      }
+    }
+  >
+    The Dark Knight
+  </Text>
+  <Text
+    numberOfLines={1}
+    style={
+      Object {
+        "color": "#FFFFFF",
+        "fontSize": 14,
+        "marginVertical": 2,
+        "opacity": 0.6,
+      }
+    }
+  >
+    2h 32min
+     | 
+    13+
+  </Text>
+</View>
+`;
