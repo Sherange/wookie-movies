@@ -1,21 +1,16 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {NavigationContainer} from '@react-navigation/native';
 import DetailScreen from './src/screens/DetailScreen';
 import HomeScreen from './src/screens/HomeScreen';
 
 const App = () => {
   return (
-    <SafeAreaProvider>
-      <HomeScreen />
-    </SafeAreaProvider>
+    <NavigationContainer>
+      <SafeAreaProvider>
+        <HomeScreen />
+      </SafeAreaProvider>
+    </NavigationContainer>
   );
 };
 
