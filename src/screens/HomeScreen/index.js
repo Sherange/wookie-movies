@@ -15,7 +15,7 @@ import CardList from '../HomeScreen/CardList';
 const data = movies;
 
 const HomeScreen = ({navigation}) => {
-  const navigateDetailScreen = () => {
+  const navigateDetailScreen = (data) => {
     navigation.navigate('DetailScreen');
   };
 

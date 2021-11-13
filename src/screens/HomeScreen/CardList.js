@@ -8,14 +8,9 @@ const CardList = props => {
   const {data, genre, navigateDetailScreen} = props;
 
   const renderItem = ({item}) => (
-    <MovieCard
-      image={item.poster}
-      title={item.title}
-      classification={item.classification}
-      length={item.length}
-      navigateDetailScreen={navigateDetailScreen}
-    />
+    <MovieCard item={item} navigateDetailScreen={navigateDetailScreen} />
   );
+
   return (
     <View style={styles.cardListContainer}>
       <Text style={styles.genreTitleText}>{genre}</Text>

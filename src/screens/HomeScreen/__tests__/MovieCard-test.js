@@ -13,27 +13,13 @@ const testData = {
 
 it('renders correctly', () => {
   renderer.create(
-    <MovieCard
-      image={testData.poster}
-      title={testData.title}
-      classification={testData.classification}
-      length={testData.length}
-      navigateDetailScreen={() => {}}
-    />,
+    <MovieCard item={testData} navigateDetailScreen={() => {}} />,
   );
 });
 
 test('MovieCard snapshot', () => {
   const snapshot = renderer
-    .create(
-      <MovieCard
-        image={testData.poster}
-        title={testData.title}
-        classification={testData.classification}
-        length={testData.length}
-        navigateDetailScreen={() => {}}
-      />,
-    )
+    .create(<MovieCard item={testData} navigateDetailScreen={() => {}} />)
     .toJSON();
   expect(snapshot).toMatchSnapshot();
 });

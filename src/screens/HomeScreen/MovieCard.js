@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import {primaryTextColor} from '../../constants/theme';
 
 const MovieCard = props => {
-  const {image, title, classification, length, navigateDetailScreen} = props;
+  const {poster, title, length, classification} = props.item;
   return (
     <TouchableOpacity
       style={styles.movieCardContainer}
-      onPress={() => navigateDetailScreen()}>
-      <Image source={{uri: image}} style={{width: 150, height: 250}}></Image>
+      onPress={() => props.navigateDetailScreen()}>
+      <Image source={{uri: poster}} style={{width: 150, height: 250}}></Image>
       <Text style={styles.titleStyle} numberOfLines={1}>
         {title}
       </Text>
@@ -41,11 +41,13 @@ const styles = StyleSheet.create({
 });
 
 MovieCard.propTypes = {
-  image: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  length: PropTypes.string.isRequired,
-  classification: PropTypes.string.isRequired,
-  navigateDetailScreen : PropTypes.func.isRequired
+  item: PropTypes.shape({
+    poster: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    length: PropTypes.string.isRequired,
+    classification: PropTypes.string.isRequired,
+  }),
+  navigateDetailScreen: PropTypes.func.isRequired,
 };
 
 export default MovieCard;
