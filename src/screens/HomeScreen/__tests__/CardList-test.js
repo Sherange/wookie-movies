@@ -43,12 +43,24 @@ const testData = [
 ];
 
 it('renders correctly', () => {
-  renderer.create(<CardList data={testData} genre={'Action'} />);
+  renderer.create(
+    <CardList
+      data={testData}
+      genre={'Action'}
+      navigateDetailScreen={() => {}}
+    />,
+  );
 });
 
 test('CardList snapshot', () => {
   const snapshot = renderer
-    .create(<CardList data={testData} genre={'Action'} />)
+    .create(
+      <CardList
+        data={testData}
+        genre={'Action'}
+        navigateDetailScreen={() => {}}
+      />,
+    )
     .toJSON();
   expect(snapshot).toMatchSnapshot();
 });

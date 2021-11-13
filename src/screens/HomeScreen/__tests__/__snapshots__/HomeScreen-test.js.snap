@@ -17,6 +17,7 @@ exports[`Home snapshot 1`] = `
         "backgroundColor": "#0F1B2B",
         "flex": 1,
         "justifyContent": "center",
+        "marginTop": 10,
       }
     }
   >
@@ -218,10 +219,22 @@ exports[`Home snapshot 1`] = `
                   }
                 >
                   <View
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    nativeID="animatedComponent"
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
                         "marginRight": 10,
                         "marginVertical": 8,
+                        "opacity": 1,
                         "width": 150,
                       }
                     }
@@ -281,10 +294,22 @@ exports[`Home snapshot 1`] = `
                   }
                 >
                   <View
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    nativeID="animatedComponent"
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
                         "marginRight": 10,
                         "marginVertical": 8,
+                        "opacity": 1,
                         "width": 150,
                       }
                     }
@@ -344,10 +369,22 @@ exports[`Home snapshot 1`] = `
                   }
                 >
                   <View
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    nativeID="animatedComponent"
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
                         "marginRight": 10,
                         "marginVertical": 8,
+                        "opacity": 1,
                         "width": 150,
                       }
                     }
@@ -407,10 +444,22 @@ exports[`Home snapshot 1`] = `
                   }
                 >
                   <View
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    nativeID="animatedComponent"
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
                         "marginRight": 10,
                         "marginVertical": 8,
+                        "opacity": 1,
                         "width": 150,
                       }
                     }
@@ -470,10 +519,22 @@ exports[`Home snapshot 1`] = `
                   }
                 >
                   <View
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    nativeID="animatedComponent"
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
                         "marginRight": 10,
                         "marginVertical": 8,
+                        "opacity": 1,
                         "width": 150,
                       }
                     }
@@ -708,10 +769,22 @@ exports[`Home snapshot 1`] = `
                   }
                 >
                   <View
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    nativeID="animatedComponent"
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
                         "marginRight": 10,
                         "marginVertical": 8,
+                        "opacity": 1,
                         "width": 150,
                       }
                     }
@@ -771,10 +844,22 @@ exports[`Home snapshot 1`] = `
                   }
                 >
                   <View
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    nativeID="animatedComponent"
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
                         "marginRight": 10,
                         "marginVertical": 8,
+                        "opacity": 1,
                         "width": 150,
                       }
                     }
@@ -834,10 +919,22 @@ exports[`Home snapshot 1`] = `
                   }
                 >
                   <View
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    nativeID="animatedComponent"
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
                         "marginRight": 10,
                         "marginVertical": 8,
+                        "opacity": 1,
                         "width": 150,
                       }
                     }
@@ -897,10 +994,22 @@ exports[`Home snapshot 1`] = `
                   }
                 >
                   <View
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    nativeID="animatedComponent"
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
                         "marginRight": 10,
                         "marginVertical": 8,
+                        "opacity": 1,
                         "width": 150,
                       }
                     }
@@ -960,10 +1069,22 @@ exports[`Home snapshot 1`] = `
                   }
                 >
                   <View
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    nativeID="animatedComponent"
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
                         "marginRight": 10,
                         "marginVertical": 8,
+                        "opacity": 1,
                         "width": 150,
                       }
                     }
@@ -1198,10 +1319,22 @@ exports[`Home snapshot 1`] = `
                   }
                 >
                   <View
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    nativeID="animatedComponent"
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
                         "marginRight": 10,
                         "marginVertical": 8,
+                        "opacity": 1,
                         "width": 150,
                       }
                     }
@@ -1261,10 +1394,22 @@ exports[`Home snapshot 1`] = `
                   }
                 >
                   <View
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    nativeID="animatedComponent"
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
                         "marginRight": 10,
                         "marginVertical": 8,
+                        "opacity": 1,
                         "width": 150,
                       }
                     }
@@ -1324,10 +1469,22 @@ exports[`Home snapshot 1`] = `
                   }
                 >
                   <View
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    nativeID="animatedComponent"
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
                         "marginRight": 10,
                         "marginVertical": 8,
+                        "opacity": 1,
                         "width": 150,
                       }
                     }
@@ -1387,10 +1544,22 @@ exports[`Home snapshot 1`] = `
                   }
                 >
                   <View
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    nativeID="animatedComponent"
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
                         "marginRight": 10,
                         "marginVertical": 8,
+                        "opacity": 1,
                         "width": 150,
                       }
                     }
@@ -1450,10 +1619,22 @@ exports[`Home snapshot 1`] = `
                   }
                 >
                   <View
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    nativeID="animatedComponent"
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
                         "marginRight": 10,
                         "marginVertical": 8,
+                        "opacity": 1,
                         "width": 150,
                       }
                     }

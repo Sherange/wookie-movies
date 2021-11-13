@@ -1,12 +1,14 @@
 import React from 'react';
-import {View, Image, StyleSheet, Text} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import PropTypes from 'prop-types';
 import {primaryTextColor} from '../../constants/theme';
 
 const MovieCard = props => {
-  const {image, title, classification, length} = props;
+  const {image, title, classification, length, navigateDetailScreen} = props;
   return (
-    <View style={styles.movieCardContainer}>
+    <TouchableOpacity
+      style={styles.movieCardContainer}
+      onPress={() => navigateDetailScreen()}>
       <Image source={{uri: image}} style={{width: 150, height: 250}}></Image>
       <Text style={styles.titleStyle} numberOfLines={1}>
         {title}
@@ -14,7 +16,7 @@ const MovieCard = props => {
       <Text style={styles.subTitleStyle} numberOfLines={1}>
         {length} | {classification}
       </Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -43,6 +45,7 @@ MovieCard.propTypes = {
   title: PropTypes.string.isRequired,
   length: PropTypes.string.isRequired,
   classification: PropTypes.string.isRequired,
+  navigateDetailScreen : PropTypes.func.isRequired
 };
 
 export default MovieCard;

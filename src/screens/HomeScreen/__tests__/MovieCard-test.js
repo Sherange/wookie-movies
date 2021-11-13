@@ -18,6 +18,7 @@ it('renders correctly', () => {
       title={testData.title}
       classification={testData.classification}
       length={testData.length}
+      navigateDetailScreen={() => {}}
     />,
   );
 });
@@ -30,6 +31,7 @@ test('MovieCard snapshot', () => {
         title={testData.title}
         classification={testData.classification}
         length={testData.length}
+        navigateDetailScreen={() => {}}
       />,
     )
     .toJSON();

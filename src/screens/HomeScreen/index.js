@@ -7,13 +7,18 @@ import {
   StyleSheet,
   ScrollView,
 } from 'react-native';
+import PropTypes from 'prop-types';
 import {backgroundColor, primaryTextColor} from '../../constants/theme';
 import {movies} from '../../constants/mockData';
 import CardList from '../HomeScreen/CardList';
 
 const data = movies;
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
+  const navigateDetailScreen = () => {
+    navigation.navigate('DetailScreen');
+  };
+
   return (
     <SafeAreaView style={styles.safeAreaViewStyle}>
       <StatusBar
@@ -25,9 +30,21 @@ const HomeScreen = () => {
         <Text style={styles.titleStyle}>Wookiee Movies</Text>
 
         <ScrollView>
-          <CardList data={data} genre={'Action'} />
-          <CardList data={data} genre={'Drama'} />
-          <CardList data={data} genre={'Triller'} />
+          <CardList
+            data={data}
+            genre={'Action'}
+            navigateDetailScreen={navigateDetailScreen}
+          />
+          <CardList
+            data={data}
+            genre={'Drama'}
+            navigateDetailScreen={navigateDetailScreen}
+          />
+          <CardList
+            data={data}
+            genre={'Triller'}
+            navigateDetailScreen={navigateDetailScreen}
+          />
         </ScrollView>
       </View>
     </SafeAreaView>
@@ -44,7 +61,7 @@ const styles = StyleSheet.create({
     backgroundColor: backgroundColor,
     justifyContent: 'center',
     alignItems: 'flex-start',
-    marginTop :10
+    marginTop: 10,
   },
   titleStyle: {
     color: primaryTextColor,
@@ -54,5 +71,9 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
 });
+
+HomeScreen.propTypes = {
+  navigation: PropTypes.object,
+};
 
 export default HomeScreen;

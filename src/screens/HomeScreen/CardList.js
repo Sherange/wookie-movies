@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, Text, StyleSheet, FlatList} from 'react-native';
-import {primaryTextColor, secondryColor, secondryTextColor} from "../../constants/theme";
+import {secondryColor} from '../../constants/theme';
 import MovieCard from './MovieCard';
 import PropTypes from 'prop-types';
 
 const CardList = props => {
-  const {data, genre} = props;
+  const {data, genre, navigateDetailScreen} = props;
 
   const renderItem = ({item}) => (
     <MovieCard
@@ -13,6 +13,7 @@ const CardList = props => {
       title={item.title}
       classification={item.classification}
       length={item.length}
+      navigateDetailScreen={navigateDetailScreen}
     />
   );
   return (
@@ -49,6 +50,7 @@ const styles = StyleSheet.create({
 CardList.propTypes = {
   data: PropTypes.array.isRequired,
   genre: PropTypes.string.isRequired,
+  navigateDetailScreen: PropTypes.func.isRequired,
 };
 
 export default CardList;
