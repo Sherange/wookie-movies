@@ -8,7 +8,7 @@ const MovieCard = props => {
   return (
     <TouchableOpacity
       style={styles.movieCardContainer}
-      onPress={() => props.navigateDetailScreen()}>
+      onPress={() => props.navigateDetailScreen(props.item)}>
       <Image source={{uri: poster}} style={{width: 150, height: 250}}></Image>
       <Text style={styles.titleStyle} numberOfLines={1}>
         {title}

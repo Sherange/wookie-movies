@@ -51,7 +51,10 @@ const styles = StyleSheet.create({
 MovieInfo.propTypes = {
   year: PropTypes.string.isRequired,
   duration: PropTypes.string.isRequired,
-  director : PropTypes.string.isRequired,
+  director: PropTypes.oneOfType([
+    PropTypes.string.isRequired,
+    PropTypes.array.isRequired,
+  ]),
   overview: PropTypes.string.isRequired,
   cast: PropTypes.array.isRequired,
 };

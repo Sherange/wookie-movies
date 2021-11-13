@@ -1,13 +1,12 @@
 import React from 'react';
 import {View, StyleSheet, StatusBar, ScrollView} from 'react-native';
 import {backgroundColor} from '../../constants/theme';
-import {movie} from '../../constants/mockData';
 import Header from './Header';
 import MovieInfo from './MovieInfo';
+import PropTypes from 'prop-types';
 
-const data = movie;
-
-const DetailScreen = () => {
+const DetailScreen = props => {
+  const data = props.route.params;
   return (
     <View style={styles.detailScreen}>
       <StatusBar
@@ -41,5 +40,25 @@ const styles = StyleSheet.create({
     backgroundColor: backgroundColor,
   },
 });
+
+DetailScreen.propTypes = {
+  navigation: PropTypes.object,
+  route: PropTypes.shape({
+    params: PropTypes.shape({
+      backdrop: PropTypes.string.isRequired,
+      poster: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      imdb_rating: PropTypes.number.isRequired,
+      cast: PropTypes.array.isRequired,
+      overview: PropTypes.string.isRequired,
+      released_on: PropTypes.string.isRequired,
+      length: PropTypes.string.isRequired,
+      director: PropTypes.oneOfType([
+        PropTypes.string.isRequired,
+        PropTypes.array.isRequired,
+      ]),
+    }),
+  }),
+};
 
 export default DetailScreen;
