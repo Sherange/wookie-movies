@@ -16,8 +16,12 @@ const data = movies;
 const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.safeAreaViewStyle}>
+      <StatusBar
+        barStyle={'light-content'}
+        backgroundColor={backgroundColor}
+        translucent={true}
+      />
       <View style={styles.homeScreen}>
-        <StatusBar barStyle={'light-content'} translucent={true} />
         <Text style={styles.titleStyle}>Wookiee Movies</Text>
 
         <ScrollView>
@@ -40,12 +44,13 @@ const styles = StyleSheet.create({
     backgroundColor: backgroundColor,
     justifyContent: 'center',
     alignItems: 'flex-start',
+    marginTop :10
   },
   titleStyle: {
     color: primaryTextColor,
     fontSize: 24,
     fontWeight: '600',
-    paddingVertical :8,
+    paddingVertical: 8,
     marginLeft: 20,
   },
 });

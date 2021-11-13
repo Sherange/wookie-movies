@@ -8,7 +8,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <SafeAreaProvider>
-        <HomeScreen />
+        <DetailScreen />
       </SafeAreaProvider>
     </NavigationContainer>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, StatusBar} from 'react-native';
+import {View, StyleSheet, StatusBar, ScrollView} from 'react-native';
 import {backgroundColor} from '../../constants/theme';
 import {movie} from '../../constants/mockData';
 import Header from './Header';
@@ -10,20 +10,26 @@ const data = movie;
 const DetailScreen = () => {
   return (
     <View style={styles.detailScreen}>
-      <StatusBar barStyle={'light-content'} translucent={true} />
+      <StatusBar
+        barStyle={'light-content'}
+        backgroundColor={'transparent'}
+        translucent={true}
+      />
       <Header
         coverImage={data.backdrop}
         thumbnailImage={data.poster}
         title={data.title}
         rating={data.imdb_rating}
       />
-      <MovieInfo
-        cast={data.cast}
-        overview={data.overview}
-        year={data.released_on}
-        duration={data.length}
-        director={data.director}
-      />
+      <ScrollView>
+        <MovieInfo
+          cast={data.cast}
+          overview={data.overview}
+          year={data.released_on}
+          duration={data.length}
+          director={data.director}
+        />
+      </ScrollView>
     </View>
   );
 };
