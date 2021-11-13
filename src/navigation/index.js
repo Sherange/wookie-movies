@@ -1,31 +1,50 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import DetailScreen from '../screens/DetailScreen';
-import HomeScreen from '../screens/HomeScreen';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import SearchStackNavigation from './SearchStack';
+import HomeStackNavigation from './HomeStack';
+import {backgroundColor, primaryColor, primaryTextColor} from '../constants/theme';
 
-const HomeStack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
-const HomeStackNavigation = () => {
+const TabNavigator = () => {
   return (
-    <HomeStack.Navigator>
-      <HomeStack.Screen
-        name="HomeScreen"
-        component={HomeScreen}
+    <Tab.Navigator
+      screenOptions={{
+        tabBarStyle: {backgroundColor: backgroundColor, borderTopWidth: 0},
+      }}>
+      <Tab.Screen
+        name="Home"
+        component={HomeStackNavigation}
         options={{
           headerShown: false,
+          tabBarShowLabel: false,
+          tabBarIcon: ({focused}) => (
+            <MaterialIcons
+              name="home"
+              size={30}
+              color={focused ? primaryColor : primaryTextColor}
+            />
+          ),
         }}
       />
-      <HomeStack.Screen
-        name="DetailScreen"
-        component={DetailScreen}
+      <Tab.Screen
+        name="Settings"
+        component={SearchStackNavigation}
         options={{
-          title : "",
-          headerTransparent : true
-          
+          headerShown: false,
+          tabBarShowLabel: false,
+          tabBarIcon: ({focused}) => (
+            <MaterialIcons
+              name="search"
+              size={30}
+              color={focused ? primaryColor : primaryTextColor}
+            />
+          ),
         }}
       />
-    </HomeStack.Navigator>
+    </Tab.Navigator>
   );
 };
 
-export default HomeStackNavigation;
+export default TabNavigator;
