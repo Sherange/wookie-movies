@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   SafeAreaView,
   View,
@@ -8,16 +8,30 @@ import {
   ScrollView,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import {useSelector, useDispatch} from 'react-redux';
+import { setActionMovies } from '../../redux/movieSlice';
 import {backgroundColor, primaryTextColor} from '../../constants/theme';
 import {movies} from '../../constants/mockData';
 import CardList from '../HomeScreen/CardList';
 
-const data = movies;
-
 const HomeScreen = ({navigation}) => {
+  
+  const dispatch = useDispatch();
+ 
+  //get state from redux-store
+  const {actionMovies} = useSelector(state => state.movies);
+
   const navigateDetailScreen = data => {
     navigation.navigate('DetailScreen', data);
   };
+
+  const fetchMovies = () => {
+    dispatch(setActionMovies(movies));
+  };
+
+  useEffect(() => {
+    fetchMovies();
+  }, []);
 
   return (
     <SafeAreaView style={styles.safeAreaViewStyle}>
@@ -31,18 +45,8 @@ const HomeScreen = ({navigation}) => {
 
         <ScrollView>
           <CardList
-            data={data}
+            data={actionMovies}
             genre={'Action'}
-            navigateDetailScreen={navigateDetailScreen}
-          />
-          <CardList
-            data={data}
-            genre={'Drama'}
-            navigateDetailScreen={navigateDetailScreen}
-          />
-          <CardList
-            data={data}
-            genre={'Triller'}
             navigateDetailScreen={navigateDetailScreen}
           />
         </ScrollView>
