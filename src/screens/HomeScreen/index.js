@@ -11,7 +11,11 @@ import PropTypes from 'prop-types';
 import {useSelector, useDispatch} from 'react-redux';
 import axios from 'axios';
 
-import {setActionMovies, setThrillerMovies} from '../../redux/movieSlice';
+import {
+  setActionMovies,
+  setThrillerMovies,
+  setCrimeMovies,
+} from '../../redux/movieSlice';
 import {backgroundColor, primaryTextColor} from '../../constants/theme';
 import {baseUrl, endPoints} from '../../constants/appConst';
 import CardList from '../HomeScreen/CardList';
@@ -20,44 +24,43 @@ const HomeScreen = ({navigation}) => {
   const dispatch = useDispatch();
 
   //get state from redux-store
-  const {actionMovies, thrillerMovies} = useSelector(state => state.movies);
+  const {actionMovies, thrillerMovies, crimeMovies} = useSelector(
+    state => state.movies,
+  );
 
   const navigateDetailScreen = data => {
     navigation.navigate('DetailScreen', data);
   };
 
   const fetchMovies = async () => {
-    try {
-      const responce = await axios.get(baseUrl + endPoints.movies, {
-        headers: {Authorization: 'Bearer Wookie2019'},
-      });
-      if (responce && responce.status === 200) {
-        const {movies} = responce.data;
-        let actionMovies = [];
-        let crimeMovies = [];
-        let thrillerMovies = [];
+    const responce = await axios.get(baseUrl + endPoints.movies, {
+      headers: {Authorization: 'Bearer Wookie2019'},
+    });
+    if (responce && responce.status === 200) {
+      const {movies} = responce.data;
+      let actionMovies = [];
+      let crimeMovies = [];
+      let thrillerMovies = [];
 
-        movies.map(item => {
-          //find genre in movies
-          item.genres.map(genre => {
-            switch (genre) {
-              case 'Action':
-                actionMovies.push(item);
-                break;
-              case 'Crime':
-                crimeMovies.push(item);
-                break;
-              case 'Thriller':
-                thrillerMovies.push(item);
-                break;
-            }
-          });
+      movies.map(item => {
+        //find genre in movies
+        item.genres.map(genre => {
+          switch (genre) {
+            case 'Action':
+              actionMovies.push(item);
+              break;
+            case 'Crime':
+              crimeMovies.push(item);
+              break;
+            case 'Thriller':
+              thrillerMovies.push(item);
+              break;
+          }
         });
-        dispatch(setActionMovies(actionMovies));
-        dispatch(setThrillerMovies(thrillerMovies));
-      }
-    } catch (error) {
-      console.log('error', error);
+      });
+      dispatch(setActionMovies(actionMovies));
+      dispatch(setThrillerMovies(thrillerMovies));
+      dispatch(setCrimeMovies(crimeMovies));
     }
   };
 
@@ -84,6 +87,11 @@ const HomeScreen = ({navigation}) => {
           <CardList
             data={thrillerMovies}
             genre={'Thriller'}
+            navigateDetailScreen={navigateDetailScreen}
+          />
+          <CardList
+            data={crimeMovies}
+            genre={'Crime'}
             navigateDetailScreen={navigateDetailScreen}
           />
         </ScrollView>
