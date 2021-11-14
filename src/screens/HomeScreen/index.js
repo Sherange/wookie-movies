@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   SafeAreaView,
   View,
@@ -19,6 +19,7 @@ import {
 import {backgroundColor, primaryTextColor} from '../../constants/theme';
 import {baseUrl, endPoints} from '../../constants/appConst';
 import CardList from '../HomeScreen/CardList';
+import Loader from '../../components/Loader';
 
 const HomeScreen = ({navigation}) => {
   const dispatch = useDispatch();
@@ -28,39 +29,48 @@ const HomeScreen = ({navigation}) => {
     state => state.movies,
   );
 
+  //isLoading
+  const [isLoading, setIsloading] = useState(true);
+
   const navigateDetailScreen = data => {
     navigation.navigate('DetailScreen', data);
   };
 
   const fetchMovies = async () => {
-    const responce = await axios.get(baseUrl + endPoints.movies, {
-      headers: {Authorization: 'Bearer Wookie2019'},
-    });
-    if (responce && responce.status === 200) {
-      const {movies} = responce.data;
-      let actionMovies = [];
-      let crimeMovies = [];
-      let thrillerMovies = [];
-
-      movies.map(item => {
-        //find genre in movies
-        item.genres.map(genre => {
-          switch (genre) {
-            case 'Action':
-              actionMovies.push(item);
-              break;
-            case 'Crime':
-              crimeMovies.push(item);
-              break;
-            case 'Thriller':
-              thrillerMovies.push(item);
-              break;
-          }
-        });
+    try {
+      const responce = await axios.get(baseUrl + endPoints.movies, {
+        headers: {Authorization: 'Bearer Wookie2019'},
       });
-      dispatch(setActionMovies(actionMovies));
-      dispatch(setThrillerMovies(thrillerMovies));
-      dispatch(setCrimeMovies(crimeMovies));
+      if (responce && responce.status === 200) {
+        const {movies} = responce.data;
+        let actionMovies = [];
+        let crimeMovies = [];
+        let thrillerMovies = [];
+
+        movies.map(item => {
+          //find genre in movies
+          item.genres.map(genre => {
+            switch (genre) {
+              case 'Action':
+                actionMovies.push(item);
+                break;
+              case 'Crime':
+                crimeMovies.push(item);
+                break;
+              case 'Thriller':
+                thrillerMovies.push(item);
+                break;
+            }
+          });
+        });
+        dispatch(setActionMovies(actionMovies));
+        dispatch(setThrillerMovies(thrillerMovies));
+        dispatch(setCrimeMovies(crimeMovies));
+        setIsloading(false);
+      }
+    } catch (error) {
+      console.log('error', error);
+      setIsloading(false);
     }
   };
 
@@ -75,27 +85,31 @@ const HomeScreen = ({navigation}) => {
         backgroundColor={backgroundColor}
         translucent={true}
       />
-      <View style={styles.homeScreen}>
-        <Text style={styles.titleStyle}>Wookiee Movies</Text>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <View style={styles.homeScreen}>
+          <Text style={styles.titleStyle}>Wookiee Movies</Text>
 
-        <ScrollView>
-          <CardList
-            data={actionMovies}
-            genre={'Action'}
-            navigateDetailScreen={navigateDetailScreen}
-          />
-          <CardList
-            data={thrillerMovies}
-            genre={'Thriller'}
-            navigateDetailScreen={navigateDetailScreen}
-          />
-          <CardList
-            data={crimeMovies}
-            genre={'Crime'}
-            navigateDetailScreen={navigateDetailScreen}
-          />
-        </ScrollView>
-      </View>
+          <ScrollView>
+            <CardList
+              data={actionMovies}
+              genre={'Action'}
+              navigateDetailScreen={navigateDetailScreen}
+            />
+            <CardList
+              data={thrillerMovies}
+              genre={'Thriller'}
+              navigateDetailScreen={navigateDetailScreen}
+            />
+            <CardList
+              data={crimeMovies}
+              genre={'Crime'}
+              navigateDetailScreen={navigateDetailScreen}
+            />
+          </ScrollView>
+        </View>
+      )}
     </SafeAreaView>
   );
 };
