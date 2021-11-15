@@ -124,14 +124,13 @@ const styles = StyleSheet.create({
     backgroundColor: backgroundColor,
     justifyContent: 'center',
     alignItems: 'flex-start',
-    marginTop: 10,
+    paddingTop : 20,
   },
   titleStyle: {
     color: primaryTextColor,
     fontSize: 24,
     fontWeight: '600',
-    paddingVertical: 8,
-    marginLeft: 20,
+    marginHorizontal: 20,
   },
 });
 
