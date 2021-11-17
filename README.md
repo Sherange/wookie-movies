@@ -1,48 +1,107 @@
-### Objective
+# Wookie Movie App
 
-Your assignment is to implement a React Native movie listing app.
+<img src="home.png" alt="home" width="40%"/>
+<img src="detail.png" alt="detail" width="40%"/>
 
-### Brief
+React Native Mobile App
+* For Android: 
+* For IOS: 
 
-You are the owner of a movie theater in **Thikkiiana City,** on the Wookiee homeworld of Kashyyyk. Your customers are bored with the never changing selection and are asking for something completely different - they want to see what's playing on Earth. Wookies are the main exporter of Computer Technology for the New Republic so naturally you roll up your sleeves and get to work. You quickly scribble down some notes and after a few hours of relentless work you have a design in mind.
+## Getting Started
+This is a react native mobile application. This app code is preloaded with some basic libraries and basic app architecture.
 
-### Tasks
 
--   Implement a React Native movie listing app
--   Build out the project to the designs inside the `/Designs` folder
--   Connect your application to the **CodeSubmit Movie Database** at `https://wookie.codesubmit.io/movies`
--   For authentication pass the `"Authorization: Bearer Wookie2019"` header
--   Parse the API response and display the results as outlined in the design. **Make sure to group movies by categories**.
--   Implement a detail view for the movies in the list
--   Implement the search view by connecting to `https://wookie.codesubmit.io/movies?q=<search_term>`
--   Surprise us! Add a feature that you think would work well here (for instance, advanced search, integration with other API, a "Favorite" functionality)
-    -   Describe the feature in separate markdown file
+## How to Use 
 
-### Deliverables
+**Step 1:**
 
-Make sure to include all source code in this repository.
+Download or clone this repo by using the link below:
 
-For iOS, include a assignment.zip file containing your compressed .app bundle **in the root of the repository**.
-Your .app bundle must represent a simulator build of your app. After running in iOS Simulator via Xcode, look in ~/Library/Developer/Xcode/DerivedData/<project-name>/Build/Products/Debug-iphonesimulator/.
-Alternatively, you may run xcodebuild -sdk iphonesimulator (if you use .xcodeproj) or xcodebuild -sdk iphonesimulator -workspace Sample.xcworkspace/ -scheme <your-scheme> -configuration Debug (if you use .xcworkspace) in your project directory, then zip the .app bundle in build/Debug-iphonesimulator/.
+```
+git clone http://mydna-life-knjoln@git.codesubmit.io/mydna-life/mydna-wookie-moves-mlxulf
+```
 
-For Android, include assignment.apk containing your app **in the root of the repository**.
-After your app is built, either via Android Studio or by running the command ./gradlew assembleDebug in your project directory, look in <project-name>/<module-name>/build/outputs/apk/.
+**Step 2:**
 
-### Evaluation Criteria
+Go to project root and execute the following command in console to get the required dependencies: 
 
--   **React Native** best practices
--   Show us your work through your commit history
--   Completeness: did you complete the features?
--   Correctness: does the functionality act in sensible, thought-out ways?
--   Maintainability: is it written in a clean, maintainable way?
--   Testing: is the system adequately tested?
+```
+yarn install 
+```
 
-### CodeSubmit
+**Step 3:**
 
-Please organize, design, test and document your code as if it were
-going into production - then push your changes to the master branch. After you have pushed your code, you may submit the assignment on the assignment page.
+Execute the following command to run project in IOS:
 
-All the best and happy coding,
+```
+yarn react-native run-ios
+```
 
-The MyDNA Life Team
+## App Features:
+
+
+* Home Sceem
+* Detail View
+* Search Screen
+
+### Libraries & Tools Used
+
+* [React Native Elements](https://reactnativeelements.com)
+* [Redux Toolkit](https://redux-toolkit.js.org)
+* [React Navigation](https://reactnavigation.org)
+* [React Native Vector Icons ](https://github.com/oblador/react-native-vector-icons)
+
+### Folder Structure
+Here is the core folder structure which used for this app.
+
+```
+react-native-app/
+|- android
+|- designs
+|- ios
+|- src
+```
+
+Here is the folder structure we have been using in this project
+
+```
+src/
+|- components/
+|- constants/
+|- navigation/
+|- redux/
+|- screens/
+|- App.js
+```
+
+Now, lets dive into the lib folder which has the main code for the application.
+
+```
+1 components 
+  - Contains the common UI components of the application like Loaders Buttons InputFields
+2 constants 
+  - All the application level constants are defined in this file. contains the constants for `theme`, `urls`, `mock data` and `strings`
+3 navigation
+  — Contains the app navigation files like stack navigation and bottomtab navigation
+5 redux
+  — Contains the redux store of the application and redux-slice that comes with reducers and action dispatchers .
+4 screens 
+  — Contains the screen UIs and components for the specific screen. For example, Home, Profile etc.
+5 App.js
+  - This is the starting point of the application. All the application level configurations are defined in this file i.e, Providers, Navigation container
+```
+
+
+
+### SCREENS
+
+This directory contains all the ui of the application. Each screen is located in a separate folder making it easy to combine group of files related to that particular screen. All the screen specific components will be placed in as shown in the example below:
+
+```
+screens/
+|- home
+   |- index.js
+   |- components
+      |- CardList.js
+      |- MovieCard.js
+```
