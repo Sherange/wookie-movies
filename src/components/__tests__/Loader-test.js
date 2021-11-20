@@ -8,3 +8,8 @@ import renderer from 'react-test-renderer';
 it('renders correctly', () => {
   renderer.create(<Loader />);
 });
+
+test('Loader snapshot', () => {
+  const snapshot = renderer.create(<Loader />).toJSON();
+  expect(snapshot).toMatchSnapshot();
+});

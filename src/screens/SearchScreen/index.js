@@ -1,11 +1,16 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import {backgroundColor, primaryTextColor} from '../../constants/theme';
+import AppButton from '../../components/AppButton';
+import AppInput from '../../components/AppInput';
 
 const SearchScreen = () => {
   return (
     <View style={styles.viewStyle}>
-      <Text style={styles.textStyle}>SearchScreen</Text>
+      <View style={{marginHorizontal: 20}}>
+        <AppInput placeholder={'Search title'} />
+        <AppButton title={'Search'} />
+      </View>
     </View>
   );
 };
@@ -13,14 +18,12 @@ const SearchScreen = () => {
 const styles = StyleSheet.create({
   viewStyle: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: backgroundColor,
   },
-  textStyle : {
-    fontSize : 24,
-    color : primaryTextColor
-  }
+  textStyle: {
+    fontSize: 24,
+    color: primaryTextColor,
+  },
 });
 
 export default SearchScreen;
